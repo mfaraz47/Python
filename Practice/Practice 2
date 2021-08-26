@@ -1,0 +1,22 @@
+def format_name(first_name, last_name):
+	# code goes here
+	if first_name == "" and last_name == "":
+		return ""
+	elif first_name == "" and last_name != "":
+		return last_name
+	elif last_name == "" and first_name != "":
+		return first_name
+	else:
+		return last_name + ", " + first_name
+
+print("Name: " + str(format_name("Ernest","Hemingway")))
+# Should return the string "Name: Hemingway, Ernest"
+
+print("Name: " + str(format_name("", "Madonna")))
+# Should return the string "Name: Madonna"
+
+print("Name: " + str(format_name("Voltaire", "")))
+# Should return the string "Name: Voltaire"
+
+print("Name: " + str(format_name("", "")))
+# Should return an empty string
