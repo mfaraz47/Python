@@ -1,0 +1,27 @@
+Write a function that checks if a string is a palindrome. A palindrome is a string that can be equally read from left to right or right to left, omitting blank spaces, and ignoring capitalization. Examples of palindromes are words like kayak and radar, and phrases like "Never Odd or Even". Fill in the blanks in this function to return True if the passed string is a palindrome, False if not.
+
+-- Code starts here --
+def is_palindrome(input_string):
+	# We'll create two strings, to compare them
+	input_string = input_string.lower()
+	input_string = input_string.strip()
+	new_string = ""
+	reverse_string = ""
+	# Traverse through each letter of the input string
+	for i in range (len(input_string)):
+		# Add any non-blank letters to the 
+		# end of one string, and to the front
+		# of the other string.
+			new_string += input_string[i]
+			reverse_string += input_string[-1-i]
+	# Compare the strings
+	new_string = new_string.replace(" ","")
+	reverse_string = reverse_string.replace(" ","")
+	print(new_string,reverse_string)
+	if new_string == reverse_string:
+		return True
+	return False
+
+print(is_palindrome("Never Odd or Even")) # Should be True
+print(is_palindrome("abc")) # Should be False
+print(is_palindrome("kayak")) # Should be True
